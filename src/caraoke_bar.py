@@ -9,4 +9,7 @@ class CaraokeBar:
     def check_guest_into_room(self,guest,room):
         room.room_occupants.append(guest)
 
+    def check_guest_out_of_room(self,guest,room):
+        room.room_occupants.remove(guest)
+
 
