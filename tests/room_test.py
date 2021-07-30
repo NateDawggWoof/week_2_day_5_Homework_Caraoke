@@ -9,7 +9,7 @@ class TestRoom(unittest.TestCase):
         self.caraoke_bar_1 = CaraokeBar("Code Clan Caraoke")
         self.room_1 = Room("Hello Kitty")
         self.song_1 = Song("Eye Of The Tiger","Survivor")
-        self.song_2 = Song("YMCA","Village people")
+        self.song_2 = Song("YMCA","Village People")
         self.caraoke_bar_1.music_librairy = [self.song_1,self.song_2]
 
 
@@ -24,6 +24,10 @@ class TestRoom(unittest.TestCase):
     def test_search_for_song_True(self):
         song_request = "Eye Of The Tiger"
         self.assertEqual(True, self.room_1.search_for_song(self.caraoke_bar_1,song_request))
+
+    def test_search_for_song_False(self):
+        song_request = "Do They It's Chrimstas Time"
+        self.assertEqual(False, self.room_1.search_for_song(self.caraoke_bar_1,song_request))
 
     # def test_add_song_to_room_playlist_queue(self):
 

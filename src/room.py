@@ -10,6 +10,9 @@ class Room:
 
     def search_for_song(self,caraoke_bar,song_request):
         for song in caraoke_bar.music_librairy:
-            if song_request == song.song_name:
+            if song_request.lower() == song.song_name.lower():
                 return True
+            else:
+                return False
+            
                 
