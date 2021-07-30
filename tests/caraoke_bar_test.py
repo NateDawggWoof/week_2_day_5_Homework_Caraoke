@@ -67,3 +67,5 @@ class TestCaraokeBar(unittest.TestCase):
         self.caraoke_bar.add_room()
         self.assertEqual(3,self.caraoke_bar.count_rooms())
         
+    def test_room_names(self):
+        self.assertEqual(['Hello Kitty', 'My Little Pony'], self.caraoke_bar.print_room_names())

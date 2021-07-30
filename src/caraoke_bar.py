@@ -27,4 +27,9 @@ class CaraokeBar:
     def count_rooms(self):
         return len(self.rooms)
 
+    def print_room_names(self):
+        room_names = [room.room_name for room in self.rooms]
+        print(list(room_names))
+        return room_names
 
+    def remove_room
