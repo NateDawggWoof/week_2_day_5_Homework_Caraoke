@@ -19,5 +19,8 @@ class Room:
     def add_song_to_playlist_queue(self,Song):
         self.playlist_queue.append(Song)
 
+    def remove_song_from_playlist_queue(self,Song):
+        self.playlist_queue.remove(Song)
+
     def count_songs_in_playlist_queue(self):
         return len(self.playlist_queue)
