@@ -1,3 +1,5 @@
+from src.room import Room
+
 class CaraokeBar:
     def __init__(self,caraoke_bar_name):
 
@@ -17,4 +19,12 @@ class CaraokeBar:
     def check_all_guests_out_from_all_rooms(self):
         for Room in self.rooms:
             Room.room_occupants.clear()
+
+    def add_room(self):
+        Room_x =  Room(input("Please enter room name :"))
+        self.rooms.append(Room_x)
+
+    def count_rooms(self):
+        return len(self.rooms)
+
 

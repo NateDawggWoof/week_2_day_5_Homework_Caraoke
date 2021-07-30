@@ -62,3 +62,8 @@ class TestCaraokeBar(unittest.TestCase):
         self.caraoke_bar.check_all_guests_out_from_all_rooms()
         self.assertEqual(0, room_1.check_number_of_occupants())
         self.assertEqual(0, room_2.check_number_of_occupants()) 
+
+    def test_add_room(self):
+        self.caraoke_bar.add_room()
+        self.assertEqual(3,self.caraoke_bar.count_rooms())
+        
