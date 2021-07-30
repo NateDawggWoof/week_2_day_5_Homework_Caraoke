@@ -32,3 +32,13 @@ class TestCaraokeBar(unittest.TestCase):
         self.caraoke_bar.check_guest_out_of_room(self.guest_1,self.room_1)
         self.caraoke_bar.check_guest_out_of_room(self.guest_2,self.room_1)
         self.assertEqual(0, self.room_1.check_number_of_occupants())
+
+    def test_check_all_guests_out_from_room(self):
+        self.caraoke_bar.check_guest_into_room(self.guest_1,self.room_1)
+        self.caraoke_bar.check_guest_into_room(self.guest_2,self.room_1)
+        self.assertEqual(2, self.room_1.check_number_of_occupants())
+
+        self.caraoke_bar.check_all_guest_out_from_room(self.room_1)
+        self.assertEqual(0, self.room_1.check_number_of_occupants())
+
+    
