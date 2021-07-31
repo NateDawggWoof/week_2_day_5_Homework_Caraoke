@@ -32,4 +32,6 @@ class CaraokeBar:
         print(list(room_names))
         return room_names
 
-    def remove_room
+    def remove_room(self,room_name):
+        for room in self.rooms:
+            self.rooms.remove(room)
