@@ -1,3 +1,4 @@
+from src.song import Song
 from src.room import Room
 
 class CaraokeBar:
@@ -35,3 +36,12 @@ class CaraokeBar:
     def remove_room(self,room_name):
         for room in self.rooms:
             self.rooms.remove(room)
+
+    def add_song_to_music_libriary(self):
+        Song_x =  Song(input("Please enter song name :"), input("Please enter Band or Artist name :"))
+        self.music_librairy.append(Song_x)
+
+    def count_songs_in_music_librairy(self):
+        return len(self.music_librairy)
+
+    
