@@ -34,8 +34,9 @@ class CaraokeBar:
         return room_names
 
     def remove_room(self,room_name):
-        for room in self.rooms:
-            self.rooms.remove(room)
+        for Room in self.rooms:
+            if Room.room_name == room_name:
+                self.rooms.remove(Room)
 
     def add_song_to_music_libriary(self):
         Song_x =  Song(input("Please enter song name :"), input("Please enter Band or Artist name :"))
@@ -44,4 +45,9 @@ class CaraokeBar:
     def count_songs_in_music_librairy(self):
         return len(self.music_librairy)
 
+    
+    def remove_song_from_music_libriary(self,song_name):
+        for Song in self.music_librairy:
+            if Song.song_name == song_name:
+                self.music_librairy.remove(Song)
     
