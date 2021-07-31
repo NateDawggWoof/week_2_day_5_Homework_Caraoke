@@ -50,4 +50,9 @@ class CaraokeBar:
         for Song in self.music_librairy:
             if Song.song_name == song_name:
                 self.music_librairy.remove(Song)
+
+    def print_music_libriary(self):
+        libriary_list = [Song.song_name + " by " + Song.band_or_artist_name for Song in self.music_librairy]
+        print(list(libriary_list))
+        return libriary_list
     

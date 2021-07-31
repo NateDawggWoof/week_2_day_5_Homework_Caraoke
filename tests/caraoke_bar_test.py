@@ -15,7 +15,7 @@ class TestCaraokeBar(unittest.TestCase):
         self.guest_2 = Guest("Sylvester Stallone")
         self.guest_3 = Guest("Jackie Chan")
         self.guest_4 = Guest("Chris Tucker")
-        self._song_1 = Song("YMCA", "Village, People")
+        self._song_1 = Song("YMCA", "The Village People")
         self.caraoke_bar.music_librairy = [self._song_1]
 
     def test_caraoke_bar_has_name_Code_Clan_Caraoke(self):
@@ -83,3 +83,7 @@ class TestCaraokeBar(unittest.TestCase):
     def test_remove_song_from_music_libriary(self):
         self.caraoke_bar.remove_song_from_music_libriary("YMCA")
         self.assertEqual(0,self.caraoke_bar.count_songs_in_music_librairy())
+
+    def test_print_music_libriary(self):
+        song_x = Song()
+        self.assertEqual(['YMCA by The Village People'], self.caraoke_bar.print_music_libriary())
