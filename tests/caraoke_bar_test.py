@@ -85,5 +85,4 @@ class TestCaraokeBar(unittest.TestCase):
         self.assertEqual(0,self.caraoke_bar.count_songs_in_music_librairy())
 
     def test_print_music_libriary(self):
-        song_x = Song()
         self.assertEqual(['YMCA by The Village People'], self.caraoke_bar.print_music_libriary())

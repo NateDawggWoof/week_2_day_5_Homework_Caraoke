@@ -1,5 +1,6 @@
 from src.song import Song
 from src.room import Room
+from src.guest import Guest
 
 class CaraokeBar:
     def __init__(self,caraoke_bar_name):
@@ -8,8 +9,17 @@ class CaraokeBar:
         self.rooms =[]
         self.music_librairy = []
 
-    def check_guest_into_room(self,Guest,Room):
-        Room.room_occupants.append(Guest)
+    def guest_details():
+        Guest_X = Guest(input("Enter guest full name"))
+        return Guest_X
+         
+
+    def check_guest_into_room(self,Guest=None,Room=None):
+        if Guest == "test":
+            Guest = self.guest_details()
+            Room.room_occupants.append(Guest)
+        else:
+            Room.room_occupants.append(Guest)
 
     def check_guest_out_of_room(self,guest,Room):
         Room.room_occupants.remove(guest)
