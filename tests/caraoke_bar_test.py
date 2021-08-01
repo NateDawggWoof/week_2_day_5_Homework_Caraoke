@@ -101,4 +101,8 @@ class TestCaraokeBar(unittest.TestCase):
         self.guest_1.debit_card = 0
         self.assertEqual(False,self.caraoke_bar.funds_check_transaction_validity(self.guest_1, self.caraoke_bar.session_price_30mins))
 
+    def test_funds_check_transaction_validity_pass(self):
+        self.guest_1.debit_card = 100
+        self.assertEqual(True,self.caraoke_bar.funds_check_transaction_validity(self.guest_1, self.caraoke_bar.session_price_30mins))
+
     
