@@ -3,11 +3,14 @@ from src.room import Room
 from src.guest import Guest
 
 class CaraokeBar:
-    def __init__(self,caraoke_bar_name):
+    def __init__(self,caraoke_bar_name,balance=0):
 
         self.caraoke_bar_name = caraoke_bar_name
+        self.balance = balance
         self.rooms =[]
         self.music_librairy = []
+        self.session_price_30mins = 5
+        self.session_price_60mins = 10
 
     def guest_details():
         Guest_X = Guest(input("Enter guest full name"))
@@ -65,4 +68,10 @@ class CaraokeBar:
         libriary_list = [Song.song_name + " by " + Song.band_or_artist_name for Song in self.music_librairy]
         print(list(libriary_list))
         return libriary_list
+
+    def funds_check_transaction_validity(sefl,Guest, purchase):
+        if Guest.debit_card >= purchase:
+            return True
+        else:
+            return False
     

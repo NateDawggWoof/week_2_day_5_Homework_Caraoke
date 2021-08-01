@@ -7,7 +7,7 @@ from src.caraoke_bar import CaraokeBar
 class TestCaraokeBar(unittest.TestCase):
     
     def setUp(self):
-        self.caraoke_bar = CaraokeBar("Code Clan Caraoke")
+        self.caraoke_bar = CaraokeBar("Code Clan Caraoke",100)
         self.room_1 = Room("Hello Kitty",2)
         self.room_2 = Room("My Little Pony",5)
         self.caraoke_bar.rooms = [self.room_1, self.room_2]
@@ -96,3 +96,9 @@ class TestCaraokeBar(unittest.TestCase):
         self.caraoke_bar.check_guest_into_room(self.guest_1,self.room_2)
         self.caraoke_bar.check_guest_into_room(self.guest_2,self.room_2)
         self.assertEqual(3,self.room_2.check_space_availability())
+
+    def test_funds_check_transaction_validity_Fail(self):
+        self.guest_1.debit_card = 0
+        self.assertEqual(False,self.caraoke_bar.funds_check_transaction_validity(self.guest_1, self.caraoke_bar.session_price_30mins))
+
+    
