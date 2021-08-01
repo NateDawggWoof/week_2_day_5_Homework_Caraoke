@@ -10,7 +10,7 @@ class CaraokeBar:
         self.rooms =[]
         self.music_librairy = []
         self.session_price_30mins = 5
-        self.session_price_60mins = 10
+        self.session_price_60mins = 8
 
     def guest_details():
         Guest_X = Guest(input("Enter guest full name"))
@@ -74,4 +74,13 @@ class CaraokeBar:
             return True
         else:
             return False
+
+    def funds_add_to_balance(self, Guest, purchase):
+        self.balance += purchase
+        Guest.debit_card -= purchase
+
+    def funds_refund_to_guest(self, Guest, purchase):
+        self.balance -= purchase
+        Guest.debit_card += purchase
+
     
