@@ -87,7 +87,12 @@ class TestCaraokeBar(unittest.TestCase):
     def test_print_music_libriary(self):
         self.assertEqual(['YMCA by The Village People'], self.caraoke_bar.print_music_libriary())
 
-    def test_check_space_availability(self):
+    def test_check_space_availability_0_spaces(self):
         self.caraoke_bar.check_guest_into_room(self.guest_1,self.room_1)
         self.caraoke_bar.check_guest_into_room(self.guest_2,self.room_1)
         self.assertEqual(0,self.room_1.check_space_availability())
+
+    def test_check_space_availability_3_spaces(self):
+        self.caraoke_bar.check_guest_into_room(self.guest_1,self.room_2)
+        self.caraoke_bar.check_guest_into_room(self.guest_2,self.room_2)
+        self.assertEqual(3,self.room_2.check_space_availability())
