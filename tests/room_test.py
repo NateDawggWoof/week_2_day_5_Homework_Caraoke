@@ -30,7 +30,7 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(True, self.room_1.search_for_song(self.caraoke_bar,song_request))
 
     def test_search_for_song_False(self):
-        song_request = "Do They It's Chrimstas Time"
+        song_request = "Do They Know It's Chrimstas Time"
         self.assertEqual(False, self.room_1.search_for_song(self.caraoke_bar,song_request))
 
     def test_add_song_to_playlist_queue(self):

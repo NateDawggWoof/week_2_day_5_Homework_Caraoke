@@ -13,30 +13,30 @@ class CaraokeBar:
         self.session_price_60mins = 8
 
     def guest_details():
-        Guest_X = Guest(input("Enter guest full name"))
-        return Guest_X
+        guest_X = guest(input("Enter guest full name"))
+        return guest_X
          
 
-    def check_guest_into_room(self,Guest=None,Room=None):
-        if Guest == "test":
-            Guest = self.guest_details()
-            Room.room_occupants.append(Guest)
+    def check_guest_into_room(self,guest=None,room=None):
+        if guest == "test":
+            guest = self.guest_details()
+            room.room_occupants.append(guest)
         else:
-            Room.room_occupants.append(Guest)
+            room.room_occupants.append(guest)
 
-    def check_guest_out_of_room(self,guest,Room):
-        Room.room_occupants.remove(guest)
+    def check_guest_out_of_room(self,guest,room):
+        room.room_occupants.remove(guest)
 
-    def check_all_guests_out_from_room(self,Room):
-        Room.room_occupants.clear()
+    def check_all_guests_out_from_room(self,room):
+        room.room_occupants.clear()
 
     def check_all_guests_out_from_all_rooms(self):
-        for Room in self.rooms:
-            Room.room_occupants.clear()
+        for room in self.rooms:
+            room.room_occupants.clear()
 
     def add_room(self):
-        Room_x =  Room(input("Please enter room name :"))
-        self.rooms.append(Room_x)
+        room_x =  Room(input("Please enter room name :"))
+        self.rooms.append(room_x)
 
     def count_rooms(self):
         return len(self.rooms)
@@ -47,40 +47,40 @@ class CaraokeBar:
         return room_names
 
     def remove_room(self,room_name):
-        for Room in self.rooms:
-            if Room.room_name == room_name:
-                self.rooms.remove(Room)
+        for room in self.rooms:
+            if room.room_name == room_name:
+                self.rooms.remove(room)
 
     def add_song_to_music_libriary(self):
-        Song_x =  Song(input("Please enter song name :"), input("Please enter Band or Artist name :"))
-        self.music_librairy.append(Song_x)
+        song_x = Song(input("Please enter song name :"), input("Please enter Band or Artist name :"))
+        self.music_librairy.append(song_x)
 
     def count_songs_in_music_librairy(self):
         return len(self.music_librairy)
 
     
     def remove_song_from_music_libriary(self,song_name):
-        for Song in self.music_librairy:
-            if Song.song_name == song_name:
-                self.music_librairy.remove(Song)
+        for song in self.music_librairy:
+            if song.song_name == song_name:
+                self.music_librairy.remove(song)
 
     def print_music_libriary(self):
-        libriary_list = [Song.song_name + " by " + Song.band_or_artist_name for Song in self.music_librairy]
+        libriary_list = [song.song_name + " by " + song.band_or_artist_name for song in self.music_librairy]
         print(list(libriary_list))
         return libriary_list
 
-    def funds_check_transaction_validity(sefl,Guest, purchase):
-        if Guest.debit_card >= purchase:
+    def funds_check_transaction_validity(sefl,guest, purchase):
+        if guest.debit_card >= purchase:
             return True
         else:
             return False
 
-    def funds_add_to_balance(self, Guest, purchase):
+    def funds_add_to_balance(self, guest, purchase):
         self.balance += purchase
-        Guest.debit_card -= purchase
+        guest.debit_card -= purchase
 
-    def funds_refund_to_guest(self, Guest, purchase):
+    def funds_refund_to_guest(self, guest, purchase):
         self.balance -= purchase
-        Guest.debit_card += purchase
+        guest.debit_card += purchase
 
     

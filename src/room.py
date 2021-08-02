@@ -12,18 +12,17 @@ class Room:
 
     def search_for_song(self,caraoke_bar,song_request):
         for song in caraoke_bar.music_librairy:
-            # print(caraoke_bar.count_songs_in_music_librairy())
-            if song_request.lower() == song.song_name.lower():
-                return True
-            else:
-                return False
+            print(song.song_name + song.band_or_artist_name + " searched song")
+            print(caraoke_bar.count_songs_in_music_librairy())
+            return song_request.lower() == song.song_name.lower()
+
             
 
-    def add_song_to_playlist_queue(self,Song):
-        self.playlist_queue.append(Song)
+    def add_song_to_playlist_queue(self,song):
+        self.playlist_queue.append(song)
 
-    def remove_song_from_playlist_queue(self,Song):
-        self.playlist_queue.remove(Song)
+    def remove_song_from_playlist_queue(self,song):
+        self.playlist_queue.remove(song)
 
     def count_songs_in_playlist_queue(self):
         return len(self.playlist_queue)

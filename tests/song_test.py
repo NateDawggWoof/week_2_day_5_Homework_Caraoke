@@ -20,22 +20,20 @@ class TestSong(unittest.TestCase):
         self.guest_4 = Guest("Chris Tucker",self.caraoke_bar)
 
     def test_song_has_song_name_Eye_Of_The_Tiger(self):
-        song_1 = Song("Eye of the Tiger","Survivor")
-        self.assertEqual("Eye of the Tiger", song_1.song_name)
+        self.assertEqual("Eye of the Tiger", self.song_2.song_name)
 
 
     def test_song_has_song_name_YMCA(self):
-        song_1 = Song("YMCA","Village people")
-        self.assertEqual("YMCA",song_1.song_name)
+        self.assertEqual("YMCA",self.song_1.song_name)
 
     
     def test_song_has_band_or_artist_name_Survivor(self):
-        song_1 = Song("Eye of the Tiger","Survivor")
-        self.assertEqual("Survivor", song_1.band_or_artist_name)
+        song_band_artist_name = self.song_2.band_or_artist_name
+        self.assertEqual("Survivor",song_band_artist_name)
 
     def test_song_has_band_artist_name_Village_People(self):
-        song_1 = Song("YMCA","Village People")
-        self.assertEqual("Village People",song_1.band_or_artist_name)
+        song_band_artist_name = self.song_1.band_or_artist_name
+        self.assertEqual("The Village People",song_band_artist_name)
 
 
 
